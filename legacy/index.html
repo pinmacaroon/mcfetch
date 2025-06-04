@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mcfetch</title>
+    <script src="./jquery.js"></script>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="scroll">
+        <p>this website uses JavaScript and cookies! have questions? <a href="https://pinmacaroon.github.io/contact.html">contact me!</a></p>
+    </div>
+    <h1>mcfetch <sub>by <a href="https://pinmacaroon.github.io" target="_blank">pin</a></sub></h1>
+    <h2>use the power of <a href="https://mcsrvstat.us">mcsrvstat.us</a> and <a href="https://crafthead.net">crafthead</a> APIs to see if a minecraft server is online and much more!</h2>
+    <p><i><a href="#" onclick="window.open('./tutorial.html','tutorial','width=600,height=400')">tutorial</a></i></p>
+    <p>note: server data is cached for 1 minute as of 2025/02/09 by the API!</p>
+    <form id="main_form" onsubmit="onsubmit2();return false">
+        <label for="ip_field">server ip: </label><input type="text" id="ip_field" value="localhost:25565">&nbsp;&nbsp;
+        <label for="is_bedrock_field">is bedrock:</label><input type="checkbox" id="is_bedrock_field" disabled>&nbsp;&nbsp;
+        <label for="raw_data_field">raw data:</label><input type="checkbox" id="raw_data_field">&nbsp;&nbsp;
+        <input type="submit" value="fetch">
+    </form>
+    <hr>
+    <ul id="container">
+        <li>empty</li>
+    </ul>
+</body>
+</html>
