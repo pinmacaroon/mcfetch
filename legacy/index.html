@@ -1,14 +1,16 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>mcfetch</title>
     <script src="./jquery.js"></script>
     <script src="./index.js"></script>
+    <script src="./pack.png.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="scroll">
-        <p>this website uses JavaScript and cookies! have questions? <a href="https://pinmacaroon.github.io/contact.html">contact me!</a></p>
+        <p>this website uses JavaScript and cookies! have questions? <a href="https://pinmacaroon.github.io/contact.html">contact me!</a> this is a legacy version, see the updated one: <a href="/">updated</a></p>
     </div>
     <h1>mcfetch <sub>by <a href="https://pinmacaroon.github.io" target="_blank">pin</a></sub></h1>
     <h2>use the power of <a href="https://mcsrvstat.us">mcsrvstat.us</a> and <a href="https://crafthead.net">crafthead</a> APIs to see if a minecraft server is online and much more!</h2>
@@ -19,10 +21,27 @@
         <label for="is_bedrock_field">is bedrock:</label><input type="checkbox" id="is_bedrock_field" disabled>&nbsp;&nbsp;
         <label for="raw_data_field">raw data:</label><input type="checkbox" id="raw_data_field">&nbsp;&nbsp;
         <input type="submit" value="fetch">
+        <input type="button" value="clear list" onclick="$('#container').empty()">
     </form>
     <hr>
     <ul id="container">
-        <li>empty</li>
+        <li>
+            <div class="server_slot">
+                <a class="server_icon" href="5f1167498fa0a2b3197b512407bc3880.webp" target="_blank">
+                    <img src="5f1167498fa0a2b3197b512407bc3880.webp" height="128" width="128">
+                </a>
+                <span>
+                    <span class="server_name">pinmacaroon.github.io</span>
+                    <a href="javascript:void(0)" onclick="alert('thats mean :（');$(this).parent().parent().parent().remove()">[remove]</a><br><br>
+                    <span class="server_motd">visit my main site too!</span><br><br>
+                    <span class="server_players">players: <a href="https://pinmacaroon.github.io">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAMtSURBVDjLVZNLa1xlAIafc5szk8xkMkkm5MKY2EpT2qa2MTVCmoLS2gq6EKooimAW7iQb/0I2bgTRIog0oFW7KQpCS7VqrSmmJGlSQtswqWlLLmbGmcmcZM6cy/edz00r6bt8eXh4N6+mlGJnxiZHR4APgSNAFjCBKjClInXm05Gzl3by2mPB2OSoCUwAp1/LHbcziSyO24gbgJAegg2urF8UUsifhZBvfvXK99v/C8YmRy3gt8G2/cMv517E8Wx8ApYcjZiyKbkRSgQkcFn3rzG9Nn1LhOLYt2/8UNUfLZkYaN0zfLRrkLIMCHUNIXTqIoZLjLJvU/ASrFQtnko+z2BH38HAD78DMConHh4FPn5nz6vGgqyxTp16JNj2kpR9C8eD/OoW1VoNO1NCS+d5oW0vV27f2PX11MS8MTR6+JOTXUMHNCPBui5AtdMpk8xsGNQ9ndur20TxCnbPIn5TnmJUwaxIDrTm9Jn7d1tM4EiuqZs5d41iXGefsZsIwYNCgOfVSXconJbLLEWb4CuahU2+6HO8d4DQF/0m0NpgNvLAXaPgu6QadrEZpKhUItJZj/aMS1EewvHnsdUWW/+WKG82kEykCAPRbCqlNE1B4DsocpiW5OJfIVoiyfqSQFdNdGXrpLZGcFZDPKYJg2VQCiGEZkoRlZ3A6W41mknFn2WlaOKFFrG4Tbw9wb2/S3g3miHySLdbNDd2kzYKVGpVpIiqugjF7P3yQ55pyLFWmCSyVokZPqHnEoYmsWQGuyWOGdexNIkRFOnqbGN5bRngjh4G4rMLd6+KnmQW012lWrpOJuNjCh9LU9i6gRkEZHIrpNv/QK8vcijXz5lfLijgS+PmuYV75+fPDXr1Wt9znfsouy5x+2miuoltW1iawBJV0o0/wT8lBvbv5WZ+gaWNlasz43MfmQChH777e37uT78eHDx5+BiLBROjqhDaFmGkQ1KS6+mlr7+XX2evc+nWVB54+4kznfr8pZQIxXkRyhPvDb9vIjtQqgFN12hLO2yUZ/ni8o8SuAa8NTM+t/GE4HGGx4del0J+IGXUH8ko86iuAneAszPjc9/s5P8DuO6ZcsXuRqAAAAAASUVORK5CYII=" height="16">pinmacaroon.github.io</a>
+                        </span><br><br>
+                    <span class="fetch_time">always</span>
+                </span>
+                <span class="server_status"><code>&lt;3</code></span>
+            </div>
+        </li>
     </ul>
 </body>
 </html>

@@ -14,3 +14,34 @@
         transform: translate(110%);
     }
 }
+
+ul#container {
+    list-style-type: none;
+}
+
+
+
+div.server_slot {
+    border: 3px inset black;
+    padding: 5px;
+    margin-right: 40;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+div.server_slot .server_status {
+    flex-grow: 2;
+    text-align: right;
+}
+
+div.server_slot .server_name {
+    font-size: 16pt;
+}
+
+div.server_slot .server_icon {
+    margin-right: 6pt;
+}
+
+a.server_icon img {
+    image-rendering: pixelated;
+}
