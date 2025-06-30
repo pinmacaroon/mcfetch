@@ -46,17 +46,18 @@ async function onsubmit2() {
             server_icon = packpng;
         }
 
-        let plist;
+        let plist = "";
         if (data.players.list) {
             let players = data.players.list;
-            for (let player in players) {
-                $("#plist").append(
-                    `<a href="https://namemc.com/profile/${plist[player].uuid}">
-                <img src="https://crafthead.net/helm/${
-                        plist[player].uuid
-                    }" height=16>${plist[player].name}</a>,`,
-                );
-                plist += `<a href="https://namemc.com/profile/${plist[player].uuid}"><img src="https://crafthead.net/helm/${plist[player].uuid}" height=16>${plist[player].name}</a>,`;
+            for (let p in players) {
+                let player = players[p];
+                plist += `<a href="https://namemc.com/profile/${player.uuid}"><img src="https://crafthead.net/helm/${player.uuid}" height=16>${player.name}</a>,`;
+            }
+            if (data.players.online - data.players.list.length > 0) {
+                plist += ` and ${data.players.online - data.players.list.length} anonymous player`;
+                if (data.players.online - data.players.list.length > 1){
+                    plist += "s";
+                }
             }
         } else {
             plist = "unknown";
