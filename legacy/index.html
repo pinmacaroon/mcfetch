@@ -6,16 +6,19 @@
     <script src="./jquery.js"></script>
     <script src="./index.js"></script>
     <script src="./pack.png.js"></script>
-    <link rel="stylesheet" href="./index.css">
+    <link id="stylesheet" rel="stylesheet" href="./dark.css">
 </head>
 <body>
     <div class="scroll">
-        <p>this website uses JavaScript and cookies! have questions? <a href="https://pinmacaroon.github.io/contact.html">contact me!</a> this is a legacy version, see the updated one: <a href="/">updated</a></p>
+        <p>this website uses JavaScript and cookies! have questions? <a href="https://pinmacaroon.github.io/contact.html">contact me!</a></p>
     </div>
     <h1>mcfetch <sub>by <a href="https://pinmacaroon.github.io" target="_blank">pin</a></sub></h1>
     <h2>use the power of <a href="https://mcsrvstat.us">mcsrvstat.us</a> and <a href="https://crafthead.net">crafthead</a> APIs to see if a minecraft server is online and much more!</h2>
-    <p><i><a href="#" onclick="window.open('./tutorial.html','tutorial','width=600,height=400')">tutorial</a></i></p>
-    <p>note: server data is cached for 1 minute as of 2025/02/09 by the API!</p>
+    <p><i><a href="#" onclick="window.open('./tutorial.html','tutorial','width=600,height=400')">tutorial</a> 
+        <a href="#" id="dark_button" hidden onclick="$('link#stylesheet').attr('href', 'dark.css');$(this).hide();$('a#light_button').show();var e=new Date();e.setMonth(new Date().getMonth()+12);document.cookie=`theme=dark;expires=${e.toUTCString()}`;">dark mode</a>
+        <a href="#" id="light_button" onclick="$('link#stylesheet').attr('href', 'light.css');$(this).hide();$('a#dark_button').show();var e=new Date();e.setMonth(new Date().getMonth()+12);document.cookie=`theme=light;expires=${e.toUTCString()}`;">light mode</a>
+    </i></p>
+    <p>note: server data is cached for 5 minutes by the API!</p>
     <form id="main_form" onsubmit="onsubmit2();return false">
         <label for="ip_field">server ip: </label><input type="text" id="ip_field" value="localhost:25565">&nbsp;&nbsp;
         <label for="is_bedrock_field">is bedrock:</label><input type="checkbox" id="is_bedrock_field" disabled>&nbsp;&nbsp;
@@ -27,8 +30,8 @@
     <ul id="container">
         <li>
             <div class="server_slot">
-                <a class="server_icon" href="5f1167498fa0a2b3197b512407bc3880.webp" target="_blank">
-                    <img src="5f1167498fa0a2b3197b512407bc3880.webp" height="128" width="128">
+                <a class="server_icon" href="./5f1167498fa0a2b3197b512407bc3880.webp" target="_blank">
+                    <img src="./5f1167498fa0a2b3197b512407bc3880.webp" height="128" width="128">
                 </a>
                 <span>
                     <span class="server_name">pinmacaroon.github.io</span>
@@ -43,5 +46,7 @@
             </div>
         </li>
     </ul>
+    <p style="text-align: center;">latest version: <span id="version_span"></span></p>
+    <img id="loadingspinner" src="./loading-gif.gif"></img>
 </body>
 </html>

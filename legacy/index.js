@@ -1,3 +1,4 @@
+// /// <reference types="jquery" />
 function getCookie(cname) {
     let name = cname + "=";
     let ca = document.cookie.split(";");
@@ -15,6 +16,7 @@ function getCookie(cname) {
 
 
 async function onsubmit2() {
+    $("#loadingspinner").show();
     //event.preventDefault();
     let ip = $("#ip_field").val();
     if (ip == "" || ip == null) {
@@ -101,9 +103,24 @@ async function onsubmit2() {
     }
     let e = new Date(); e.setMonth(new Date().getMonth() + 12);
     document.cookie = `lastserverip=${ip}; expires=${e.toUTCString()}`;
+    $("#loadingspinner").hide();
     return;
 }
 
-window.addEventListener("load", function () {
+window.addEventListener("load", async function () {
+    $("#loadingspinner").hide();
     $("#ip_field").val(getCookie("lastserverip"));
+    if(getCookie("theme") == "light"){
+        $('link#stylesheet').attr('href', 'light.css');
+        $('a#light_button').hide();
+        $('a#dark_button').show();
+    } else if (getCookie("theme") == "dark"){
+        $('link#stylesheet').attr('href', 'dark.css');
+        $('a#dark_button').hide();
+        $('a#light_button').show();
+    }
+    //https://api.github.com/repos/pinmacaroon/mcfetch/commits
+    let response = await fetch("https://api.github.com/repos/pinmacaroon/mcfetch/commits");
+    let data = await response.json().then((data) => data = data);
+    $("span#version_span").html(data[0].sha.slice(0,7) + " by " + data[0].commit.author.name + " at " + new Date(data[0].commit.author.date).toString() +": " + data[0].commit.message);
 });

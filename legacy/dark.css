@@ -1,3 +1,15 @@
+body {
+    background-color: rgb(37, 37, 37);
+    color: whitesmoke;
+}
+
+a {
+    color: aqua;
+}
+
+a:visited {
+    color: aquamarine;
+}
 .scroll {
     background-color: gray;
 }
@@ -43,5 +55,16 @@ div.server_slot .server_icon {
 }
 
 a.server_icon img {
+    image-rendering: pixelated;
+}
+
+img#loadingspinner {
+    display: block;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    height: 64px;
+    width: 64px;
+    left: 50%;
+    top: 50%;
     image-rendering: pixelated;
 }
