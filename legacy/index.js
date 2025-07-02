@@ -52,7 +52,9 @@ async function onsubmit2() {
         }
 
         let plist = "";
-        if (data.players.list && data.players.online > 0) {
+        if (data.players.online == 0) {
+            plist = "no one";
+        } else if(data.players.list && data.players.online > 0) {
             let players = data.players.list;
             for (let p in players) {
                 let player = players[p];
@@ -64,8 +66,6 @@ async function onsubmit2() {
                     plist += "s";
                 }
             }
-        } else if (data.players.online == 0) {
-            plist = "no one";
         } else {
             plist = "unknown";
         }
