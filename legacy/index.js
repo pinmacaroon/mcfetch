@@ -16,10 +16,11 @@ function getCookie(cname) {
 
 
 async function onsubmit2() {
-    $("#loadingspinner").show();
     //event.preventDefault();
+    $("#loadingspinner").show();
     let ip = $("#ip_field").val();
     if (ip == "" || ip == null) {
+        $("#loadingspinner").hide();
         alert("the ip is blank!");
         return;
     }
@@ -38,6 +39,8 @@ async function onsubmit2() {
         </li>`,
         );
         document.cookie = `lastserverip=${ip}`;
+        
+        $("#loadingspinner").hide();
         return;
     }
     if (data.online) {
