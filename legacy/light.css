@@ -56,3 +56,10 @@ img#loadingspinner {
     top: 50%;
     image-rendering: pixelated;
 }
+
+div#tutorial {
+    margin: auto;
+    width: 50%;
+    border: 3px inset green;
+    padding: 10px;
+}
